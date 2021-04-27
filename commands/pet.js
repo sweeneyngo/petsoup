@@ -92,6 +92,7 @@ module.exports = {
 
       GIF.finish();
       let attach = new MessageAttachment(GIF.out.getData(), "pet.gif");
+      message.channel.send(`<@${message.author.id}>`);
       message.channel.send(attach);
     })();
   },

@@ -27,12 +27,13 @@ client.once("ready", () => {
 });
 
 client.on("message", (message) => {
-  if (!message.content.startsWith(prefix) || message.author.bot) return;
-
-  const args = message.content.slice(prefix.length).trim().split(/ +/);
+  if (!message.content.startsWith(process.env.PREFIX) || message.author.bot) return;
+  const args = message.content.slice(process.env.PREFIX.length).trim().split(/ +/);
   const commandName = args.shift().toLowerCase();
 
   if (!client.commands.has(commandName)) return;
+
+  message.delete();
 
   const command = client.commands.get(commandName);
 
@@ -46,6 +47,7 @@ client.on("message", (message) => {
     return message.channel.send(reply);
   }
 
+  
   try {
     command.execute(message, args);
   } catch (error) {
@@ -59,4 +61,4 @@ client.on("message", (message) => {
   }
 });
 
-client.login();
+client.login(process.env.BOT_TOKEN);
