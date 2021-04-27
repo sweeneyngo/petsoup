@@ -1,14 +1,15 @@
 // require the discord.js module
 const { Client, MessageAttachment, Collection } = require("discord.js");
-
+const path = require('path');
 const fs = require("fs");
 
 const client = new Client();
 
 client.commands = new Collection();
 
+const dirPath = path.resolve(__dirname, './commands');
 const commandFiles = fs
-  .readdirSync("./commands")
+  .readdirSync(dirPath)
   .filter((file) => file.endsWith(".js"));
 
 for (const file of commandFiles) {
