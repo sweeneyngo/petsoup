@@ -4,10 +4,12 @@
   "description": "",
   "main": "bot.js",
   "engines": {
-    "node": "14.x"
+    "node": "14.x",
+    "npm": "*"
   },
   "scripts": {
-    "start": "node bot.js"
+    "start": "node bot.js",
+    "test": "echo \"Error: No test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
