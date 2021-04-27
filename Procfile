@@ -1,1 +1,2 @@
-worker: node src/bot.js
+web: echo "Disabled web process"
+service: npm start

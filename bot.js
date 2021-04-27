@@ -1,4 +1,5 @@
 // require the discord.js module
+require('dotenv').config();
 const { Client, MessageAttachment, Collection } = require("discord.js");
 const path = require('path');
 const fs = require("fs");
@@ -17,7 +18,7 @@ for (const file of commandFiles) {
   client.commands.set(command.name, command);
 }
 
-const { prefix, token } = require("./config.json");
+// const { prefix, token } = require("./config.json");
 
 // when the client is ready, run this code
 // this event will only trigger one time after logging in
@@ -58,4 +59,4 @@ client.on("message", (message) => {
   }
 });
 
-client.login(token);
+client.login();
