@@ -1,14 +1,14 @@
 // require the discord.js module
-require('dotenv').config();
+require("dotenv").config();
 const { Client, MessageAttachment, Collection } = require("discord.js");
-const path = require('path');
+const path = require("path");
 const fs = require("fs");
 
 const client = new Client();
 
 client.commands = new Collection();
 
-const dirPath = path.resolve(__dirname, './commands');
+const dirPath = path.resolve(__dirname, "./commands");
 const commandFiles = fs
   .readdirSync(dirPath)
   .filter((file) => file.endsWith(".js"));
@@ -27,8 +27,12 @@ client.once("ready", () => {
 });
 
 client.on("message", (message) => {
-  if (!message.content.startsWith(process.env.PREFIX) || message.author.bot) return;
-  const args = message.content.slice(process.env.PREFIX.length).trim().split(/ +/);
+  if (!message.content.startsWith(process.env.PREFIX) || message.author.bot)
+    return;
+  const args = message.content
+    .slice(process.env.PREFIX.length)
+    .trim()
+    .split(/ +/);
   const commandName = args.shift().toLowerCase();
 
   if (!client.commands.has(commandName)) return;
@@ -38,16 +42,15 @@ client.on("message", (message) => {
   const command = client.commands.get(commandName);
 
   if (command.args && !args.length) {
-    let reply = `you didn't put your image, ${message.author} ...`;
+    let reply = `e-erm... you didn't put your image, ${message.author} ...`;
 
     if (command.usage) {
-      reply += `\nmaybe try this: \`${prefix}${command.name} ${command.usage}\``;
+      reply += `\nmaybe try this? \`${process.env.PREFIX}${command.name} ${command.usage}\``;
     }
 
-    return message.channel.send(reply);
+    message.channel.send(reply);
   }
 
-  
   try {
     command.execute(message, args);
   } catch (error) {
