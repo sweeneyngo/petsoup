@@ -32,7 +32,8 @@ node -v
 Pull requests are always welcome! Any major changes you wish to implement should first be initiated with an issue + pull request (updating tests as necessary).
 
 ## Major Technologies
-- [canvas](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API)
-
+- [canvas](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API) 
+- [gifencoder](https://github.com/eugeneware/gifencoder) (2.0.1)
+- [discord.js](https://github.com/discordjs/discord.js) (12.5.3)
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
