@@ -6,7 +6,7 @@ petsoup fetches + renders an in-line GIF of the ![PETTHE](https://knowyourmeme.c
 ## Purpose
 <sub>all you have to do is to squish that cat.</sub>
 
-<img align="right" height="112" width="112" src=https://media.discordapp.net/attachments/833450081247952899/836735743358795816/pet.gif>
+<img align="right" height="180" width="180" src=https://media.discordapp.net/attachments/833450081247952899/836735743358795816/pet.gif>
 
 I've followed the template from different Twitch streams to apps like Discord, and it's an adorable addition to the collection of emotes/memes. However, despite its
 presence on these applications, there was no stable in-line renderer to automatically create these GIFs, aside from the collection of generators online. When it comes to adorable emojis,
